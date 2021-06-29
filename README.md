@@ -12,3 +12,7 @@
 - Next, run `node server.js` to start the server up on port 3000.
 - Go to **localhost:3000/room-name** (*where room-name is any name*) to enter a chat room.
 
+#### Additional Functionality Added:
+
+- (06/29/2021) Added a feature where if a user types /joke and then hits enter, a joke will be returned to them. Note that this joke will not be visible to any other user in the chat room except the person who requested the joke.
+

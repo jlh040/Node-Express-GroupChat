@@ -47,6 +47,11 @@ class ChatUser {
     });
   }
 
+  sendJoke() {
+    let joke = `{"type": "joke", "text": "What’s the best thing about Switzerland? I don’t know, but the flag is a big plus."}`
+    this._send(joke);
+  }
+
   /** Handle messages from client:
    *
    * - {type: "join", name: username} : join
@@ -57,6 +62,7 @@ class ChatUser {
     let msg = JSON.parse(jsonData);
 
     if (msg.type === 'join') this.handleJoin(msg.name);
+    else if (msg.text === '/joke') this.sendJoke();
     else if (msg.type === 'chat') this.handleChat(msg.text);
     else throw new Error(`bad message: ${msg.type}`);
   }

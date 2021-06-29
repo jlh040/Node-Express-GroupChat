@@ -25,13 +25,17 @@ ws.onmessage = function(evt) {
 
   let msg = JSON.parse(evt.data);
   let item;
-
+  
   if (msg.type === "note") {
     item = $(`<li><i>${msg.text}</i></li>`);
   }
 
   else if (msg.type === "chat") {
     item = $(`<li><b>${msg.name}: </b>${msg.text}</li>`);
+  }
+
+  else if (msg.type === 'joke') {
+    item = $(`<li><i>${msg.text}</i></li>`);
   }
 
   else {
